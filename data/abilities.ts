@@ -5703,4 +5703,249 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -3,
 	},
+
+	//AÑIL
+	sobrecarga: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Electric' && attacker.hp <= attacker.maxhp / 3) {
+				this.debug('Sobrecarga boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Electric' && attacker.hp <= attacker.maxhp / 3) {
+				this.debug('Sobrecarga boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Sobrecarga",
+		rating: 2,
+		num: 66,
+	},
+	realeza: {
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			return this.chainModify([6144, 4096]);
+		},
+		flags: {},
+		name: "Realeza",
+		rating: 4.5,
+		num: 181,
+	},
+	inflamable: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Inflamable boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Inflamable boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Inflamable",
+		rating: 3.5,
+		num: 252,
+	},
+	albino: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Ice') {
+				this.debug('Albino boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Ice') {
+				this.debug('Albino boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Albino",
+		rating: 3.5,
+		num: 252,
+	},
+	floracion: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Grass') {
+				this.debug('Floración boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Grass') {
+				this.debug('Floración boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Floración",
+		rating: 3.5,
+		num: 252,
+	},
+	podersabio: {
+		onStart(pokemon) {
+			pokemon.abilityState.choiceLock = "";
+		},
+		onBeforeMove(pokemon, target, move) {
+			if (move.isZOrMaxPowered || move.id === 'struggle') return;
+			if (pokemon.abilityState.choiceLock && pokemon.abilityState.choiceLock !== move.id) {
+				// Fails unless ability is being ignored (these events will not run), no PP lost.
+				this.addMove('move', pokemon, move.name);
+				this.attrLastMove('[still]');
+				this.debug("Disabled by Poder Sabio");
+				this.add('-fail', pokemon);
+				return false;
+			}
+		},
+		onModifyMove(move, pokemon) {
+			if (pokemon.abilityState.choiceLock || move.isZOrMaxPowered || move.id === 'struggle') return;
+			pokemon.abilityState.choiceLock = move.id;
+		},
+		onModifySpAPriority: 1,
+		onModifySpA(atk, pokemon) {
+			if (pokemon.volatiles['dynamax']) return;
+			// PLACEHOLDER
+			this.debug('Poder Sabio SpA Boost');
+			return this.chainModify(1.5);
+		},
+		onDisableMove(pokemon) {
+			if (!pokemon.abilityState.choiceLock) return;
+			if (pokemon.volatiles['dynamax']) return;
+			for (const moveSlot of pokemon.moveSlots) {
+				if (moveSlot.id !== pokemon.abilityState.choiceLock) {
+					pokemon.disableMove(moveSlot.id, false, this.effectState.sourceEffect);
+				}
+			}
+		},
+		onEnd(pokemon) {
+			pokemon.abilityState.choiceLock = "";
+		},
+		flags: {},
+		name: "Poder Sabio",
+		rating: 4.5,
+		num: 255,
+	},
+	toqueardiente: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Toque Ardiente effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (this.checkMoveMakesContact(move, target, source)) {
+				if (this.randomChance(3, 10)) {
+					target.trySetStatus('brn', source);
+				}
+			}
+		},
+		flags: {},
+		name: "Toque Ardiente",
+		rating: 2,
+		num: 143,
+	},
+	camorrista: {
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['kick']) { //kick category is added in sim/dex-moves.ts (add manually the flag to kick moves)
+				this.debug('Camorrista boost');
+				return this.chainModify([4915, 4096]);
+			}
+		},
+		flags: {},
+		name: "Camorrista",
+		rating: 3,
+		num: 89,
+	},
+	acometida: {
+		onStart(pokemon) {
+			this.add('-start', pokemon, 'ability: Slow Start');
+			this.effectState.counter = 1;
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (pokemon.activeTurns && this.effectState.counter) {
+				this.effectState.counter--;
+				if (!this.effectState.counter) {
+					this.add('-end', pokemon, 'Slow Start');
+					delete this.effectState.counter;
+				}
+			}
+		},
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, pokemon) {
+			if (this.effectState.counter) {
+				return this.chainModify(1.2);
+			}
+		},
+		onModifySpe(spe, pokemon) {
+			if (this.effectState.counter) {
+				return this.chainModify(1.5);
+			}
+		},
+		onEnd(pokemon) {
+			if (pokemon.beingCalledBack) return;
+			this.add('-end', pokemon, 'Slow Start', '[silent]');
+		},
+		flags: {},
+		name: "Acometida",
+		rating: -1,
+		num: 112,
+	},
+	espanto: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Intimidate', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({ spa: -1 }, target, pokemon, null, true);
+				}
+			}
+		},
+		flags: {},
+		name: "Espanto",
+		rating: 3.5,
+		num: 22,
+	},
+	tintineo: {
+		onSwitchInPriority: -2,
+		onStart(pokemon) {
+			//MODIFICAR (TIENE QUE CURAR A TODOS LOS ALIADOS, NO SOLO A LOS ADYACENTES)
+			const allies = [...pokemon.adjacentAllies(), ...pokemon.alliesAndSelf() || []];
+
+			for (const ally of pokemon.adjacentAllies()) {
+				ally.cureStatus();
+			}
+		},
+
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+				move.type = 'Psychic';
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
+		},
+		flags: {},
+		name: "Tintineo",
+		rating: 1.5,
+		num: 204,
+	},
 };
