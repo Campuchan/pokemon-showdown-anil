@@ -97,3 +97,8 @@ Staff
 Contributors
 
 - See http://pokemonshowdown.com/credits
+
+Añil Changes
+- Campu
+- Aitor
+- Carpanta
