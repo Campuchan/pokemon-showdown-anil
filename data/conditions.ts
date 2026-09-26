@@ -80,14 +80,45 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			return false;
 		},
 	},
+	//frz añil
 	frz: {
 		name: 'frz',
 		effectType: 'Status',
-		// Damage reduction is handled directly in the sim/battle.js damage function
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'frz', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
+			} else {
+				this.add('-status', target, 'frz');
+			}
+		},
+
+		onModifyMove(move, pokemon) {
+			if (move.flags['defrost']) {
+				this.add('-curestatus', pokemon, 'frz', `[from] move: ${move}`);
+				pokemon.clearStatus();
+			}
+		},
+
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Fire' && move.category !== 'Status' && move.id !== 'polarflare') {
+				target.cureStatus();
+			}
+		},
+
+		//Damage reduction
+		onModifySpAPriority: 1,
+		onModifySpA(atk, pokemon) {
+			return this.chainModify(0.5);
+		},
+
 		onResidualOrder: 10,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 16);
 		},
+	},
+	/* frz: {
+		name: 'frz',
+		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'frz', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
@@ -124,7 +155,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 				target.cureStatus();
 			}
 		},
-	},
+	}, */
 	psn: {
 		name: 'psn',
 		effectType: 'Status',
