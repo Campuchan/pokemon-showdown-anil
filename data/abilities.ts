@@ -5907,7 +5907,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			let activated = false;
 			for (const target of pokemon.adjacentFoes()) {
 				if (!activated) {
-					this.add('-ability', pokemon, 'Intimidate', 'boost');
+					this.add('-ability', pokemon, 'Espanto', 'boost');
 					activated = true;
 				}
 				if (target.volatiles['substitute']) {
