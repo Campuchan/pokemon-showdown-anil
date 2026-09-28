@@ -5868,7 +5868,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	acometida: {
 		onStart(pokemon) {
-			this.add('-start', pokemon, 'ability: Slow Start');
+			this.add('-start', pokemon, 'ability: Acometida');
 			this.effectState.counter = 1;
 		},
 		onResidualOrder: 28,
@@ -5877,7 +5877,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (pokemon.activeTurns && this.effectState.counter) {
 				this.effectState.counter--;
 				if (!this.effectState.counter) {
-					this.add('-end', pokemon, 'Slow Start');
+					this.add('-end', pokemon, 'Acometida');
 					delete this.effectState.counter;
 				}
 			}
@@ -5895,7 +5895,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onEnd(pokemon) {
 			if (pokemon.beingCalledBack) return;
-			this.add('-end', pokemon, 'Slow Start', '[silent]');
+			this.add('-end', pokemon, 'Acometida', '[silent]');
 		},
 		flags: {},
 		name: "Acometida",
