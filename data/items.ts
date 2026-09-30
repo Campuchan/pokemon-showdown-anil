@@ -8208,10 +8208,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 9,
 		isNonstandard: "Future",
 	},
-	gengaritepoteito: {
-		name: "Gengarite Poteito",
+	gengaritepatata: {
+		name: "Gengarite Patata",
 		spritenum: 588,
-		megaStone: { "Gengar": "Gengar-Mega-Poteito" },
+		megaStone: { "Gengar": "Gengar-Mega-Patata" },
 		itemUser: ["Gengar"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
