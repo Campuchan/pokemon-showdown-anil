@@ -21197,7 +21197,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	toxtricitymegasamaritano: {
 		num: 768,
-		name: "Toxtricity-Mega",
+		name: "Toxtricity-Gmax",
 		baseSpecies: "Toxtricity",
 		forme: "Mega",
 		types: ["Electric", "Poison"],
