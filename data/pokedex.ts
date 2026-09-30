@@ -21136,7 +21136,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 40.5,
 		color: "Purple",
 		eggGroups: ["Amorphous"],
-		requiredItem: "Gengarite Poteito",
+		requiredItem: "Gengarite Patata",
 	},
 	corviknightmega: {
 		num: 823,
