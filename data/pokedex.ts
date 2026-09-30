@@ -21150,7 +21150,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 75,
 		color: "Purple",
 		eggGroups: ["Flying"],
-		requiredItem: "Corviknightita Campuzano",
+		requiredItem: "Corviknightita",
 	},
 	heracrossmegacampuzano: {
 		num: 214,
