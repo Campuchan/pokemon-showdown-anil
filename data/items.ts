@@ -8196,6 +8196,18 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 
 	// NUEVAS MEGAS (si tiene una normal está junto a la normal, si no está aquí)
+	corviknightita: {
+		name: "Corviknightita",
+		spritenum: 608,
+		megaStone: { "Corviknight": "Corviknight-Mega" },
+		itemUser: ["Corviknight"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 659,
+		gen: 6,
+		isNonstandard: "Past",
+	},
 	aggronitepatata: {
 		name: "Aggronite Patata",
 		spritenum: 578,
