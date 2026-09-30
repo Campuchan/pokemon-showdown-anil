@@ -21195,7 +21195,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Golisopite Infernuxx",
 		gen: 9,
 	},
-	toxtricitysamaritano: {
+	toxtricitymegasamaritano: {
 		num: 768,
 		name: "Toxtricity-Mega",
 		baseSpecies: "Toxtricity",
