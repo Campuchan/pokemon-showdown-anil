@@ -8316,4 +8316,16 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 9,
 		isNonstandard: "Future",
 	},
+		cinderecitaasier: {
+		name: "Cinderecita Asier",
+		spritenum: 999,
+		megaStone: { "Cinderace": "Cinderace-Mega-Asier" },
+		itemUser: ["Cinderace"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 2660,
+		gen: 9,
+		isNonstandard: "Future",
+	},
 };
