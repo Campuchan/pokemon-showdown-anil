@@ -99,6 +99,6 @@ Contributors
 - See http://pokemonshowdown.com/credits
 
 Añil Changes
-- Campu
+- Campuzano
 - Aitor
 - Adrián
