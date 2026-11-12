@@ -3636,7 +3636,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		secondary: {
-			chance: 50,
+			chance: 30, // nerf (50->30)
 			onHit(target, source) {
 				const status = this.sample(['psn', 'par', 'slp']);
 				target.trySetStatus(status, source);
@@ -17755,7 +17755,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	spore: {
 		num: 147,
-		accuracy: 100,
+		accuracy: 90, //nerf (100->90)
 		basePower: 0,
 		category: "Status",
 		name: "Spore",
