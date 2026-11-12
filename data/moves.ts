@@ -5074,7 +5074,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	fairywind: {
 		num: 584,
 		accuracy: 100,
-		basePower: 40,
+		basePower: 50,
 		category: "Special",
 		name: "Fairy Wind",
 		pp: 30,
@@ -11687,7 +11687,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	metalclaw: {
 		num: 232,
 		accuracy: 95,
-		basePower: 50,
+		basePower: 60,
 		category: "Physical",
 		name: "Metal Claw",
 		pp: 35,
@@ -15247,7 +15247,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	rockslide: {
 		num: 157,
-		accuracy: 90,
+		accuracy: 95,
 		basePower: 80,
 		category: "Physical",
 		name: "Rock Slide",
@@ -17492,7 +17492,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	spikecannon: {
 		num: 131,
 		accuracy: 100,
-		basePower: 20,
+		basePower: 25,
 		category: "Physical",
 		isNonstandard: "Past",
 		name: "Spike Cannon",
@@ -17501,7 +17501,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		multihit: [2, 5],
 		target: "normal",
-		type: "Normal",
+		type: "Water",
 		maxMove: { basePower: 120 },
 		contestType: "Cool",
 	},
@@ -20197,7 +20197,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	twister: {
 		num: 239,
 		accuracy: 100,
-		basePower: 40,
+		basePower: 60,
 		category: "Special",
 		name: "Twister",
 		pp: 20,
