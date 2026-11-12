@@ -40,7 +40,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Polla gorda",
 		mod: 'gen9',
         gameType: 'doubles',
-		ruleset: ['Team Preview', 'Terastal Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Adjust Level Down = 50', 'Picked Team Size = 4', 'VGC Timer', 'Force Open Team Sheets'],
+		ruleset: ['Team Preview', 'Terastal Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Adjust Level Down = 30', 'Picked Team Size = 4', 'VGC Timer', 'Force Open Team Sheets'],
 		onValidateTeam(team) {
 			// Esto aprueba el equipo entero ignorando legalidad, movimientos, habilidades u objetos
 			return [];
