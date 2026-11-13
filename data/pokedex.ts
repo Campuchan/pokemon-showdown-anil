@@ -9509,7 +9509,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	pignite: {
 		num: 499,
 		name: "Pignite",
-		types: ["Fire", "Fighting"],
+		types: ["Fire", "Dark"],
 		genderRatio: { M: 0.875, F: 0.125 },
 		baseStats: { hp: 90, atk: 93, def: 55, spa: 70, spd: 55, spe: 55 },
 		abilities: { 0: "Blaze", H: "Thick Fat" },
@@ -9524,7 +9524,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	emboar: {
 		num: 500,
 		name: "Emboar",
-		types: ["Fire", "Fighting"],
+		types: ["Fire", "Dark"],
 		genderRatio: { M: 0.875, F: 0.125 },
 		baseStats: { hp: 110, atk: 123, def: 65, spa: 100, spd: 65, spe: 65 },
 		abilities: { 0: "Blaze", H: "Reckless" },
@@ -9542,7 +9542,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Emboar-Mega",
 		baseSpecies: "Emboar",
 		forme: "Mega",
-		types: ["Fire", "Fighting"],
+		types: ["Fire", "Dark"],
 		genderRatio: { M: 0.875, F: 0.125 },
 		baseStats: { hp: 110, atk: 148, def: 75, spa: 110, spd: 110, spe: 75 },
 		abilities: { 0: "Mold Breaker" },
