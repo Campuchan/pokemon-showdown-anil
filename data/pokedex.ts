@@ -6930,7 +6930,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Relicanth",
 		types: ["Water", "Rock"],
 		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 100, atk: 90, def: 130, spa: 45, spd: 65, spe: 55 },
+		baseStats: { hp: 100, atk: 100, def: 130, spa: 45, spd: 65, spe: 55 },
 		abilities: { 0: "Swift Swim", 1: "Rock Head", H: "Sturdy" },
 		heightm: 1,
 		weightkg: 23.4,
