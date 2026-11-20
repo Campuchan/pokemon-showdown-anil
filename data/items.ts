@@ -8208,6 +8208,84 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
+
+	butterfreeita: {
+		name: "Butterfreeita",
+		spritenum: 608,
+		megaStone: { "Butterfree": "Butterfree-Mega" },
+		itemUser: ["Butterfree"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 659,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+
+	blastoisiniteg: {
+		name: "Blastoisinite G",
+		spritenum: 583,
+		megaStone: { "Blastoise": "Blastoise-Mega-G" },
+		itemUser: ["Blastoise"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 661,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+	
+	gengariteg: {
+		name: "Gengarite G",
+		spritenum: 588,
+		megaStone: { "Gengar": "Gengar-Mega-G" },
+		itemUser: ["Gengar"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 2652,
+		gen: 9,
+		isNonstandard: "Future",
+	},
+	toxtricitita: {
+		name: "Toxtricitita",
+		spritenum: 510,
+		megaStone: { "Toxtricity": "Toxtricity-Mega" },
+		itemUser: ["Toxtricity"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 2656,
+		gen: 9,
+		isNonstandard: "Future",
+	},
+	grimmsnarlita: {
+		name: "Grimmsnarlita",
+		spritenum: 608,
+		megaStone: { "Grimmsnarl": "Grimmsnarl-Mega" },
+		itemUser: ["Grimmsnarl"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 2659,
+		gen: 9,
+		isNonstandard: "Future",
+	},
+
+	drednawita: {
+		name: "Drednawita",
+		spritenum: 608,
+		megaStone: { "Drednaw": "Drednaw-Mega" },
+		itemUser: ["Drednaw"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 2659,
+		gen: 9,
+		isNonstandard: "Future",
+	},
+
+	// Placeholder mega comun
 	aggronitepatata: {
 		name: "Aggronite Patata",
 		spritenum: 578,
@@ -8217,114 +8295,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2651,
-		gen: 9,
-		isNonstandard: "Future",
-	},
-	gengaritepatata: {
-		name: "Gengarite Patata",
-		spritenum: 588,
-		megaStone: { "Gengar": "Gengar-Mega-Patata" },
-		itemUser: ["Gengar"],
-		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
-		},
-		num: 2652,
-		gen: 9,
-		isNonstandard: "Future",
-	},
-	heracronitecampuzano: {
-		name: "Heracronite Campuzano",
-		spritenum: 590,
-		megaStone: { "Heracross": "Heracross-Mega-Campuzano" },
-		itemUser: ["Heracross"],
-		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
-		},
-		num: 2653,
-		gen: 9,
-		isNonstandard: "Future",
-	},
-	sableniteinfernuxx: {
-		name: "Sablenite Infernuxx",
-		spritenum: 614,
-		megaStone: { "Sableye": "Sableye-Mega-Infernuxx" },
-		itemUser: ["Sableye"],
-		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
-		},
-		num: 2654,
-		gen: 9,
-		isNonstandard: "Future",
-	},
-	golisopiteinfernuxx: {
-		name: "Golisopite Infernuxx",
-		spritenum: 508,
-		megaStone: { "Golisopod": "Golisopod-Mega-Infernuxx" },
-		itemUser: ["Golisopod"],
-		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
-		},
-		num: 2655,
-		gen: 9,
-		isNonstandard: "Future",
-	},
-	toxtricititasamaritano: {
-		name: "Toxtricitita Samaritano",
-		spritenum: 510,
-		megaStone: { "Toxtricity": "Toxtricity-Mega-Samaritano" },
-		itemUser: ["Toxtricity"],
-		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
-		},
-		num: 2656,
-		gen: 9,
-		isNonstandard: "Future",
-	},
-	cameruptitesamaritano: {
-		name: "Cameruptite Samaritano",
-		spritenum: 625,
-		megaStone: { "Camerupt": "Camerupt-Mega-Samaritano" },
-		itemUser: ["Camerupt"],
-		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
-		},
-		num: 2657,
-		gen: 9,
-		isNonstandard: "Future",
-	},
-	lopunniteandrei: {
-		name: "Lopunnite Andrei",
-		spritenum: 626,
-		megaStone: { "Lopunny": "Lopunny-Mega-Andrei" },
-		itemUser: ["Lopunny"],
-		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
-		},
-		num: 2658,
-		gen: 9,
-		isNonstandard: "Future",
-	},
-	grimmsnarlitaluisda: {
-		name: "Grimmsnarlita Luisda",
-		spritenum: 608,
-		megaStone: { "Grimmsnarl": "Grimmsnarl-Mega-Luisda" },
-		itemUser: ["Grimmsnarl"],
-		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
-		},
-		num: 2659,
-		gen: 9,
-		isNonstandard: "Future",
-	},
-		cinderecitaasier: {
-		name: "Cinderecita Asier",
-		spritenum: 999,
-		megaStone: { "Cinderace": "Cinderace-Mega-Asier" },
-		itemUser: ["Cinderace"],
-		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
-		},
-		num: 2660,
 		gen: 9,
 		isNonstandard: "Future",
 	},
