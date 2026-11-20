@@ -8208,18 +8208,33 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
-	aggronitepatata: {
-		name: "Aggronite Patata",
-		spritenum: 578,
-		megaStone: { "Aggron": "Aggron-Mega-Patata" },
-		itemUser: ["Aggron"],
+
+	butterfreeita: {
+		name: "Butterfreeita",
+		spritenum: 608,
+		megaStone: { "Butterfree": "Butterfree-Mega" },
+		itemUser: ["Butterfree"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
-		num: 2651,
-		gen: 9,
-		isNonstandard: "Future",
+		num: 659,
+		gen: 6,
+		isNonstandard: "Past",
 	},
+
+	blastoisiniteg: {
+		name: "Blastoisinite G",
+		spritenum: 583,
+		megaStone: { "Blastoise": "Blastoise-Mega-G" },
+		itemUser: ["Blastoise"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 661,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+	
 	gengariteg: {
 		name: "Gengarite G",
 		spritenum: 588,
@@ -8266,6 +8281,20 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2659,
+		gen: 9,
+		isNonstandard: "Future",
+	},
+
+	// Placeholder mega comun
+	aggronitepatata: {
+		name: "Aggronite Patata",
+		spritenum: 578,
+		megaStone: { "Aggron": "Aggron-Mega-Patata" },
+		itemUser: ["Aggron"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 2651,
 		gen: 9,
 		isNonstandard: "Future",
 	},
