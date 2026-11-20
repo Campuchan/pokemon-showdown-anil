@@ -5938,6 +5938,51 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 22,
 	},
+	pieltetrica: {
+        onModifyTypePriority: -1,
+        onModifyType(move, pokemon) {
+            const noModifyType = [
+                'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+            ];
+            if (move.type === 'Normal' && (!noModifyType.includes(move.id) || this.activeMove?.isMax) &&
+                !(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+                move.type = 'Ghost';
+                move.typeChangerBoosted = this.effect;
+            }
+        },
+        onBasePowerPriority: 23,
+        onBasePower(basePower, pokemon, target, move) {
+            if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
+        },
+        flags: {},
+        name: "Piel Tetrica",
+        rating: 4,
+        num: 182,
+    },
+	pielherbacea: {
+        onModifyTypePriority: -1,
+        onModifyType(move, pokemon) {
+            const noModifyType = [
+                'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+            ];
+            if (move.type === 'Normal' && (!noModifyType.includes(move.id) || this.activeMove?.isMax) &&
+                !(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+                move.type = 'Grass';
+                move.typeChangerBoosted = this.effect;
+            }
+        },
+        onBasePowerPriority: 23,
+        onBasePower(basePower, pokemon, target, move) {
+            if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
+        },
+        flags: {},
+        name: "Piel Herbacea",
+        rating: 4,
+        num: 182,
+    },
+
+
+
 	tintineo: {
 		onSwitchInPriority: -2,
 		onStart(pokemon) {
