@@ -6368,6 +6368,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Flying", "Dragon"],
 		requiredItem: "Altarianite",
 	},
+	
 	zangoose: {
 		num: 335,
 		name: "Zangoose",
@@ -21214,5 +21215,20 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Gray",
 		eggGroups: ["Monster"],
 		requiredItem: "Aggronite Patata",
+	},
+
+	altariamegaasier: {
+		num: 334,
+		name: "Altaria-Mega",
+		baseSpecies: "Altaria",
+		forme: "Mega-Asier",
+		types: ["Dragon", "Fairy"],
+		baseStats: { hp: 75, atk: 110, def: 110, spa: 120, spd: 105, spe: 90 },
+		abilities: { 0: "Skill Link" },
+		heightm: 1.5,
+		weightkg: 20.6,
+		color: "Blue",
+		eggGroups: ["Flying", "Dragon"],
+		requiredItem: "Altarianite Asier",
 	},
 };

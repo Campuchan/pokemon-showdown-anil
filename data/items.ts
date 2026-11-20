@@ -8298,4 +8298,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 9,
 		isNonstandard: "Future",
 	},
+
+	altarianiteasier: {
+		name: "Altarianite Asier",
+		spritenum: 615,
+		megaStone: { "Altaria": "Altaria-Mega-Asier" },
+		itemUser: ["Altaria"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 755,
+		gen: 6,
+		isNonstandard: "Past",
+	},
 };
