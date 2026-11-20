@@ -3309,7 +3309,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	cut: {
 		num: 15,
 		accuracy: 95,
-		basePower: 50,
+		basePower: 65,
 		category: "Physical",
 		isNonstandard: "Unobtainable",
 		name: "Cut",
@@ -3317,7 +3317,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
 		target: "normal",
-		type: "Normal",
+		type: "Steel",
 		contestType: "Cool",
 	},
 	darkestlariat: {
