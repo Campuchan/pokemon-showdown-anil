@@ -243,7 +243,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	blastoisemegag: {
 		num: 9,
-		name: "Blastoise-Mega-G",
+		name: "Blastoise-Gmax",
 		baseSpecies: "Blastoise",
 		forme: "Mega",
 		types: ["Water", "Steel"],
@@ -21192,7 +21192,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Mega",
 		types: ["Water", "Rock"],
 		baseStats: { hp: 90, atk: 145, def: 130, spa: 58, spd: 88, spe: 74 },
-		abilities: { 0: "Snow Warming"},
+		abilities: { 0: "Snow Warning"},
 		heightm: 24,
 		weightkg: 115.5,
 		color: "Green",
