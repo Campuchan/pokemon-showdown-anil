@@ -243,7 +243,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	blastoisemegag: {
 		num: 9,
-		name: "Blastoise-Mega-G",
+		name: "Blastoise-Gmax",
 		baseSpecies: "Blastoise",
 		forme: "Mega",
 		types: ["Water", "Steel"],
@@ -6368,6 +6368,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Flying", "Dragon"],
 		requiredItem: "Altarianite",
 	},
+	
 	zangoose: {
 		num: 335,
 		name: "Zangoose",
@@ -6930,7 +6931,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Relicanth",
 		types: ["Water", "Rock"],
 		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 100, atk: 90, def: 130, spa: 45, spd: 65, spe: 55 },
+		baseStats: { hp: 100, atk: 100, def: 130, spa: 45, spd: 65, spe: 55 },
 		abilities: { 0: "Swift Swim", 1: "Rock Head", H: "Sturdy" },
 		heightm: 1,
 		weightkg: 23.4,
@@ -21191,7 +21192,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Mega",
 		types: ["Water", "Rock"],
 		baseStats: { hp: 90, atk: 145, def: 130, spa: 58, spd: 88, spe: 74 },
-		abilities: { 0: "Snow Warming"},
+		abilities: { 0: "Snow Warning"},
 		heightm: 24,
 		weightkg: 115.5,
 		color: "Green",
@@ -21214,5 +21215,20 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Gray",
 		eggGroups: ["Monster"],
 		requiredItem: "Aggronite Patata",
+	},
+
+	altariamegaasier: {
+		num: 334,
+		name: "Altaria-Mega",
+		baseSpecies: "Altaria",
+		forme: "Mega-Asier",
+		types: ["Dragon", "Fairy"],
+		baseStats: { hp: 75, atk: 110, def: 110, spa: 120, spd: 105, spe: 90 },
+		abilities: { 0: "Skill Link" },
+		heightm: 1.5,
+		weightkg: 20.6,
+		color: "Blue",
+		eggGroups: ["Flying", "Dragon"],
+		requiredItem: "Altarianite Asier",
 	},
 };
