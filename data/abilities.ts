@@ -4943,7 +4943,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	teraformzero: {
 		onAfterTerastallization(pokemon) {
-			if (pokemon.baseSpecies.name !== 'Terapagos-Stellar') return;
 			if (this.field.weather || this.field.terrain) {
 				this.add('-ability', pokemon, 'Teraform Zero');
 				this.field.clearWeather();
@@ -6008,5 +6007,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Tintineo",
 		rating: 1.5,
 		num: 204,
+	},
+	silvano: {
+		onModifyAtk(atk) {
+			if (this.field.isTerrain('grassyterrain')) {
+				return this.chainModify(1.3);
+			}
+		},
+		onModifySpA(spa) {
+			if (this.field.isTerrain('grassyterrain')) {
+				return this.chainModify(1.3);
+			}
+		},
+		flags: {},
+		name: "Silvano",
+		rating: 3,
+		num: 207,
 	},
 };
