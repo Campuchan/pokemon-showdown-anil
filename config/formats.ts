@@ -39,7 +39,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "Torneo dobles",
 		section: "Polla gorda",
 		mod: 'gen9',
-        gameType: 'doubles',
+		gameType: 'doubles',
 		ruleset: ['Team Preview', 'Terastal Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Adjust Level Down = 50', 'Picked Team Size = 4', 'VGC Timer', 'Force Open Team Sheets'],
 		onValidateTeam(team) {
 			const restrictedTags = new Set([
@@ -53,8 +53,10 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 				'hydreigon', 'goodra', 'kommoo', 'dragapult', 'baxcalibur', 'archaludon',
 			]);
 
-			let count = 0;
-			const flagged: string[] = [];
+			let cuentaLegendarios = 0;
+			const nombresLegendarios: string[] = [];
+			let cuentaMasDe600 = 0;
+			const nombresMasDe600: string[] = [];
 
 			for (const set of team) {
 				const species = this.dex.species.get(set.species);
@@ -68,17 +70,32 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 					pseudoLegendaries.has(species.id) ||
 					pseudoLegendaries.has(baseSpecies.id);
 
+				const statCount = species.bst;
+
 				if (hasLegendaryTag || isPseudo) {
-					count++;
-					flagged.push(species.name);
+					cuentaLegendarios++;
+					nombresLegendarios.push(species.name);
+				}
+
+				if (statCount > 600) {
+					cuentaMasDe600++;
+					nombresMasDe600.push(species.name);
 				}
 			}
 
-			if (count > 3) {
-				return [
-					`Solo puedes llevar 3 legendarios o pseudos en el equipo..`,
-					`(Ahora mismo llevas ${count}: ${flagged.join(', ')})`,
-				];
+			const arrayProblemas: string[] = [];
+
+			if (cuentaLegendarios > 3) {
+				arrayProblemas.push(
+					`Solo puedes llevar 3 legendarios o pseudos en el equipo.`,
+					`(Ahora mismo llevas ${cuentaLegendarios}: ${nombresLegendarios.join(', ')})`,
+				);
+			}
+			if (cuentaMasDe600 > 1) {
+				arrayProblemas.push(
+					`No se pueden llevar bichos con mas de 600 de estadistica.`,
+					`(Ahora mismo llevas estos: ${nombresMasDe600.join(', ')})`
+				);
 			}
 		},
 	},
