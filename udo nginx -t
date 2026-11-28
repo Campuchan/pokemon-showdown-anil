@@ -1,0 +1,66 @@
+Sep 18 15:57:56 campuserver systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit nginx.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit nginx.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 235.[0m
+Sep 18 15:57:56 campuserver nginx[1660]: 2026/09/18 15:57:56 [warn] 1660#1660: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/showdownanil.campuchan.eu:43
+Sep 18 15:57:56 campuserver nginx[1660]: 2026/09/18 15:57:56 [warn] 1660#1660: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/www.campuchan.eu:11
+Sep 18 15:57:56 campuserver nginx[1660]: 2026/09/18 15:57:56 [warn] 1660#1660: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/www.campuchan.eu:12
+Sep 18 15:57:56 campuserver nginx[1660]: 2026/09/18 15:57:56 [warn] 1660#1660: conflicting server name "g.campuchan.eu" on 0.0.0.0:80, ignored
+Sep 18 15:57:56 campuserver nginx[1719]: 2026/09/18 15:57:56 [warn] 1719#1719: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/showdownanil.campuchan.eu:43
+Sep 18 15:57:56 campuserver nginx[1719]: 2026/09/18 15:57:56 [warn] 1719#1719: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/www.campuchan.eu:11
+Sep 18 15:57:56 campuserver nginx[1719]: 2026/09/18 15:57:56 [warn] 1719#1719: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/www.campuchan.eu:12
+Sep 18 15:57:56 campuserver nginx[1719]: 2026/09/18 15:57:56 [warn] 1719#1719: conflicting server name "g.campuchan.eu" on 0.0.0.0:80, ignored
+Sep 18 15:57:56 campuserver systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit nginx.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit nginx.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 235.[0m
+Sep 30 06:10:50 campuserver systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit nginx.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit nginx.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 11805764.[0m
+Sep 30 06:10:50 campuserver nginx[3067142]: 2026/09/30 06:10:50 [emerg] 3067142#3067142: unexpected "}" in /etc/nginx/sites-enabled/showdownanil.campuchan.eu:14
+Sep 30 06:10:50 campuserver nginx[3067142]: nginx: configuration file /etc/nginx/nginx.conf test failed
+Sep 30 20:29:45 campuserver systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit nginx.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit nginx.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 12415208.[0m
+Sep 30 20:29:45 campuserver nginx[3219713]: 2026/09/30 20:29:45 [emerg] 3219713#3219713: unexpected "}" in /etc/nginx/sites-enabled/showdownanil.campuchan.eu:14
+Sep 30 20:29:45 campuserver nginx[3219713]: nginx: configuration file /etc/nginx/nginx.conf test failed
+Sep 30 20:29:45 campuserver systemd[1]: [0;1;39m[0;1;31m[0;1;39mnginx.service: Control process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStartPre= process belonging to unit nginx.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Sep 30 20:29:45 campuserver systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mnginx.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit nginx.service has entered the 'failed' state with result 'exit-code'.[0m
+Sep 30 20:29:45 campuserver systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start nginx.service - A high performance web server and a reverse proxy server.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit nginx.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit nginx.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 12415208 and the job result is failed.[0m

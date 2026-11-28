@@ -3644,7 +3644,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	feraligatr: {
 		num: 160,
 		name: "Feraligatr",
-		types: ["Water"],
+		types: ["Water", "Dragon"],
 		genderRatio: { M: 0.875, F: 0.125 },
 		baseStats: { hp: 85, atk: 105, def: 100, spa: 79, spd: 83, spe: 78 },
 		abilities: { 0: "Torrent", H: "Sheer Force" },
@@ -10893,7 +10893,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	vanillite: {
 		num: 582,
 		name: "Vanillite",
-		types: ["Ice"],
+		types: ["Ice", "Fairy"],
 		baseStats: { hp: 36, atk: 50, def: 50, spa: 65, spd: 60, spe: 44 },
 		abilities: { 0: "Ice Body", 1: "Snow Cloak", H: "Weak Armor" },
 		heightm: 0.4,
@@ -10905,7 +10905,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	vanillish: {
 		num: 583,
 		name: "Vanillish",
-		types: ["Ice"],
+		types: ["Ice", "Fairy"],
 		baseStats: { hp: 51, atk: 65, def: 65, spa: 80, spd: 75, spe: 59 },
 		abilities: { 0: "Ice Body", 1: "Snow Cloak", H: "Weak Armor" },
 		heightm: 1.1,
@@ -10919,7 +10919,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	vanilluxe: {
 		num: 584,
 		name: "Vanilluxe",
-		types: ["Ice"],
+		types: ["Ice", "Fairy"],
 		baseStats: { hp: 71, atk: 95, def: 85, spa: 110, spd: 95, spe: 79 },
 		abilities: { 0: "Ice Body", 1: "Snow Warning", H: "Weak Armor" },
 		heightm: 1.3,

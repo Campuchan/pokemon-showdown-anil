@@ -39,11 +39,66 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "Torneo dobles",
 		section: "Polla gorda",
 		mod: 'gen9',
-        gameType: 'doubles',
+		gameType: 'doubles',
 		ruleset: ['Team Preview', 'Terastal Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Adjust Level Down = 50', 'Picked Team Size = 4', 'VGC Timer', 'Force Open Team Sheets'],
 		onValidateTeam(team) {
-			// Esto aprueba el equipo entero ignorando legalidad, movimientos, habilidades u objetos
-			return [];
+			const restrictedTags = new Set([
+				'Restricted Legendary',
+				'Sub-Legendary',
+				'Mythical',
+				'Paradox',
+			]);
+			const pseudoLegendaries = new Set([
+				'dragonite', 'tyranitar', 'salamence', 'metagross', 'garchomp',
+				'hydreigon', 'goodra', 'kommoo', 'dragapult', 'baxcalibur', 'archaludon',
+			]);
+
+			let cuentaLegendarios = 0;
+			const nombresLegendarios: string[] = [];
+			let cuentaMasDe600 = 0;
+			const nombresMasDe600: string[] = [];
+
+			for (const set of team) {
+				const species = this.dex.species.get(set.species);
+				const baseSpecies = this.dex.species.get(species.baseSpecies);
+
+				const hasLegendaryTag =
+					species.tags.some(tag => restrictedTags.has(tag)) ||
+					baseSpecies.tags.some(tag => restrictedTags.has(tag));
+
+				const isPseudo =
+					pseudoLegendaries.has(species.id) ||
+					pseudoLegendaries.has(baseSpecies.id);
+
+				const statCount = species.bst;
+
+				if (hasLegendaryTag || isPseudo) {
+					cuentaLegendarios++;
+					nombresLegendarios.push(species.name);
+				}
+
+				if (statCount > 600) {
+					cuentaMasDe600++;
+					nombresMasDe600.push(species.name);
+				}
+			}
+
+			const arrayProblemas: string[] = [];
+
+			if (cuentaLegendarios > 3) {
+				arrayProblemas.push(
+					`Solo puedes llevar 3 legendarios o pseudos en el equipo.`,
+					`(Ahora mismo llevas ${cuentaLegendarios}: ${nombresLegendarios.join(', ')})`,
+				);
+			}
+			if (cuentaMasDe600 > 1) {
+				arrayProblemas.push(
+					`No se pueden llevar bichos con mas de 600 de estadistica.`,
+					`(Ahora mismo llevas estos: ${nombresMasDe600.join(', ')})`
+				);
+			}
+
+			return arrayProblemas;
 		},
 	},
 ];
