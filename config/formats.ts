@@ -42,8 +42,44 @@ export const Formats: import('../sim/dex-formats').FormatList = [
         gameType: 'doubles',
 		ruleset: ['Team Preview', 'Terastal Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Adjust Level Down = 50', 'Picked Team Size = 4', 'VGC Timer', 'Force Open Team Sheets'],
 		onValidateTeam(team) {
-			// Esto aprueba el equipo entero ignorando legalidad, movimientos, habilidades u objetos
-			return [];
+			const restrictedTags = new Set([
+				'Restricted Legendary',
+				'Sub-Legendary',
+				'Mythical',
+				'Paradox',
+			]);
+			const pseudoLegendaries = new Set([
+				'dragonite', 'tyranitar', 'salamence', 'metagross', 'garchomp',
+				'hydreigon', 'goodra', 'kommoo', 'dragapult', 'baxcalibur', 'archaludon',
+			]);
+
+			let count = 0;
+			const flagged: string[] = [];
+
+			for (const set of team) {
+				const species = this.dex.species.get(set.species);
+				const baseSpecies = this.dex.species.get(species.baseSpecies);
+
+				const hasLegendaryTag =
+					species.tags.some(tag => restrictedTags.has(tag)) ||
+					baseSpecies.tags.some(tag => restrictedTags.has(tag));
+
+				const isPseudo =
+					pseudoLegendaries.has(species.id) ||
+					pseudoLegendaries.has(baseSpecies.id);
+
+				if (hasLegendaryTag || isPseudo) {
+					count++;
+					flagged.push(species.name);
+				}
+			}
+
+			if (count > 3) {
+				return [
+					`Solo puedes llevar 3 legendarios o pseudos en el equipo..`,
+					`(Ahora mismo llevas ${count}: ${flagged.join(', ')})`,
+				];
+			}
 		},
 	},
 ];
