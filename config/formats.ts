@@ -57,10 +57,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			const nombresLegendarios: string[] = [];
 			let cuentaMasDe600 = 0;
 			const nombresMasDe600: string[] = [];
+			const nombresItems: string[] = [];
 
 			for (const set of team) {
 				const species = this.dex.species.get(set.species);
 				const baseSpecies = this.dex.species.get(species.baseSpecies);
+				const item = this.dex.items.get(set.item);
 
 				const hasLegendaryTag =
 					species.tags.some(tag => restrictedTags.has(tag)) ||
@@ -71,6 +73,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 					pseudoLegendaries.has(baseSpecies.id);
 
 				const statCount = species.bst;
+
+				nombresItems.push(item.name);
 
 				if (hasLegendaryTag || isPseudo) {
 					cuentaLegendarios++;
@@ -97,7 +101,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 					`(Ahora mismo llevas estos: ${nombresMasDe600.join(', ')})`
 				);
 			}
-
+			// si hay items duplicados
+			if (new Set(nombresItems).size !== nombresItems.length) {
+				arrayProblemas.push(
+					`Tienes items duplicados, estos: ${[...new Set(nombresItems.filter((item, i) => nombresItems.indexOf(item) !== i))]}`
+				);
+			}
 			return arrayProblemas;
 		},
 	},
