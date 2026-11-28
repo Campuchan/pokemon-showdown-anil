@@ -97,6 +97,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 					`(Ahora mismo llevas estos: ${nombresMasDe600.join(', ')})`
 				);
 			}
+
+			return arrayProblemas;
 		},
 	},
 ];
